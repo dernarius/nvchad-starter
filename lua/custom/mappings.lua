@@ -1,17 +1,11 @@
-local M = {}
+local map = vim.keymap.set
 
-M.abc = {
-  n = {
-    [";"] = { ":", "enter cmdline", opts = { nowait = true } },
+map("n", ";", ":", { desc = "Enter command mode" })
 
-    -- For a more complex keymap
-    ["<leader>tt"] = {
-      function()
-         require("base46").toggle_transparency()
-      end,
-      "toggle transparency",
-    },
-  },
-}
-
-return M
+map(
+  "n", "<leader>tt", 
+  function()
+    require("base46").toggle_transparency()
+  end,
+  { desc = "Toggle transparency" }
+)

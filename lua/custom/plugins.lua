@@ -4,6 +4,14 @@ local plugins = {
     lazy = false,
   },
   {
+    "nvim-tree/nvim-tree.lua",
+    config = function()
+      require("nvim-tree").setup({
+        git = { enable = true, ignore = false, timeout = 500, },
+      })
+    end
+  }
+  {
     "nvim-treesitter/nvim-treesitter",
     config = function()
       local install = require 'nvim-treesitter.install'
@@ -34,19 +42,16 @@ local plugins = {
     "stevearc/conform.nvim",
     lazy = false,
     config = function()
-      require "custom.configs.conform"
+      return require "custom.configs.conform"
     end,
   },
   {
     "hrsh7th/nvim-cmp",
+    commit = 0b751f6beef40fd47375eaf53d3057e0bfa317e4,
     opts = function()
-      require "custom.configs.cmp"
+      return require "custom.configs.cmp"
     end,
   },
-  {
-    "rhysd/reply.vim",
-    lazy = false,
-  } 
  }
 
  return plugins
