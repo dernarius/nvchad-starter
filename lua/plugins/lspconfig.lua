@@ -8,7 +8,7 @@ return {
 
       nvlsp.defaults()
 
-      local simples = { "rust_analyzer", "texlab" }
+      local simples = { "rust_analyzer", "texlab", "rnix" }
 
       for _, lsp in ipairs(simples) do
         lspconfig[lsp].setup {
