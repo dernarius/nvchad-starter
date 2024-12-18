@@ -14,4 +14,13 @@ M.base46 = {
 	-- },
 }
 
+M.mason = {
+  pkgs = {
+    "black",
+    "python-lsp-server",
+    "rnix-lsp",
+    "rust-analyzer",
+  }
+}
+
 return M
