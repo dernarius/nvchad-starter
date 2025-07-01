@@ -9,7 +9,6 @@ return {
       local simples = {
         "pylsp",
         "rnix",
-        "ruff",
         "rust_analyzer",
         "texlab",
       }
