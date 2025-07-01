@@ -4,34 +4,34 @@ return {
     config = function()
       local nvlsp = require("nvchad.configs.lspconfig")
 
-      local lspconfig = require('lspconfig')
-
       nvlsp.defaults()
 
-      local simples = { "rust_analyzer", "texlab", "rnix" }
+      local simples = {
+        "pylsp",
+        "rnix",
+        "ruff",
+        "rust_analyzer",
+        "texlab",
+      }
+
+      vim.lsp.config("pylsp", 
+        {
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = {
+                  ignore = {'W391'},
+                  maxLineLength = 88
+                }
+              }
+            },
+          }
+        }
+      )
 
       for _, lsp in ipairs(simples) do
-        lspconfig[lsp].setup {
-          on_attach = nvlsp.on_attach,
-          on_init = nvlsp.on_init,
-          capabilities = nvlsp.capabilities,
-        }
+        vim.lsp.enable(lsp)
       end
-
-      lspconfig.pylsp.setup {
-        on_attach = nvlsp.on_attach,
-        capabilities = nvlsp.capabilities,
-        settings = {
-          pylsp = {
-            plugins = {
-              pycodestyle = {
-                ignore = {'W391'},
-                maxLineLength = 100
-              }
-            }
-          },
-        }
-      }
     end,
   },
 }

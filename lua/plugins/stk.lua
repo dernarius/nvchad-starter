@@ -9,6 +9,7 @@ local plugins = {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     config = function()
       local install = require 'nvim-treesitter.install'
       install["compilers"] = { "zig" }
