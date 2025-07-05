@@ -2,22 +2,22 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     config = function()
-      require("nvim-tree").setup({
-        git = { enable = true, ignore = false, timeout = 500, },
-      })
-    end
+      require("nvim-tree").setup {
+        git = { enable = true, ignore = false, timeout = 500 },
+      }
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     config = function()
-      local install = require 'nvim-treesitter.install'
+      local install = require "nvim-treesitter.install"
       install["compilers"] = { "zig" }
       install["prefer_git"] = false
 
-      local configs = require("nvim-treesitter.configs")
-      configs.setup({
-         ensure_installed = {
+      local configs = require "nvim-treesitter.configs"
+      configs.setup {
+        ensure_installed = {
           "lua",
           "vim",
           "vimdoc",
@@ -25,7 +25,7 @@ local plugins = {
         },
         highlight = { enable = true },
         indent = { enable = true },
-      })
+      }
     end,
   },
 }

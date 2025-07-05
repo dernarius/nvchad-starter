@@ -7,14 +7,16 @@ return {
         lsp_fallback = true,
 
         formatters_by_ft = {
-          lua = {"stylua"},
+          lua = { "stylua" },
 
-          javascript = {"prettier"},
-          css = {"prettier"},
-          html = {"prettier"},
+          javascript = { "prettier" },
+          css = { "prettier" },
+          html = { "prettier" },
 
-          python = {"black"},
-        }
+          python = { "black" },
+
+          go = { "go fmt" },
+        },
       }
 
       require("conform").setup(options)
