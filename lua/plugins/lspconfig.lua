@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     config = function()
       local nvlsp = require "nvchad.configs.lspconfig"
 
@@ -23,8 +24,10 @@ return {
           pylsp = {
             plugins = {
               pycodestyle = {
-                ignore = { "W391" },
                 maxLineLength = 88,
+              },
+              pylint = {
+                enabled = true,
               },
             },
           },
