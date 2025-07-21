@@ -9,20 +9,15 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<Leader>t", function()
   vim.cmd "tabnew"
   vim.cmd "term"
-end, { desc = "open terminal" })
+end, { desc = "Open terminal" })
 
-map("n", "<Leader>w", function()
-  local api = require "nvim-tree.api"
-  api.tree.close()
-  vim.cmd "bd!"
-  api.tree.open()
-end, { desc = "CMD enter command mode" })
-
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+map({ "n", "i", "v" }, "<C-s>", function()
+  vim.cmd "w"
+end, { desc = "Save" })
 
 map("n", "<leader>tt", function()
-  require("base46").toggle_transparency()
-end, { desc = "Toggle transparency" })
+  require("base46").toggle_theme()
+end, { desc = "Toggle theme" })
 
 map("n", "<leader>ca", function()
   vim.lsp.buf.code_action()
