@@ -11,13 +11,10 @@ return {
         "gopls",
         "nixd",
         "pylsp",
+        "ruff",
         "rust_analyzer",
         "texlab",
       }
-
-      if vim.loop.os_uname().sysname == "Linux" then
-        table.insert(simples, "ruff")
-      end
 
       vim.lsp.config("pylsp", {
         settings = {
