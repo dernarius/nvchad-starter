@@ -22,3 +22,12 @@ end, { desc = "Toggle theme" })
 map("n", "<leader>ca", function()
   vim.lsp.buf.code_action()
 end, { desc = "Code actions" })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    map("n", "<Leader>p", function()
+      vim.api.nvim_echo({ { "hello python!" } }, true, {})
+    end, { buffer = true })
+  end,
+})

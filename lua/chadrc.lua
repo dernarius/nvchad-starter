@@ -15,4 +15,13 @@ M.base46 = {
   -- },
 }
 
+M.ui = {
+  statusline = {
+    order = { "mode", "f" },
+    modules = {
+      f = "%#St_file#%F",
+    },
+  },
+}
+
 return M

@@ -13,7 +13,7 @@ return {
           css = { "prettier" },
           html = { "prettier" },
 
-          python = { "black" },
+          python = { "black", "isort" },
 
           go = { "go fmt" },
         },
