@@ -8,11 +8,6 @@ local M = {}
 M.base46 = {
   theme = "everforest_light",
   theme_toggle = { "everforest", "everforest_light" },
-
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
 }
 
 M.ui = {
