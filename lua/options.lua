@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-function stk_todo_replace_box(nchar)
+local function stk_todo_replace_box(nchar)
   local pos = vim.api.nvim_win_get_cursor(0)
   vim.cmd("s/^[󰄱󰡖󰱒]/" .. nchar)
   vim.cmd "noh"
