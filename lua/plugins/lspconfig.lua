@@ -14,6 +14,7 @@ return {
         "ruff",
         "rust_analyzer",
         "texlab",
+        "ty",
       }
 
       vim.lsp.config("pylsp", {
