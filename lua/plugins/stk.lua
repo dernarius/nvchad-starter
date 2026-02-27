@@ -15,7 +15,7 @@ local plugins = {
       install["compilers"] = { "zig" }
       install["prefer_git"] = false
 
-      local configs = require "nvim-treesitter.configs"
+      local configs = require "nvim-treesitter"
       configs.setup {
         ensure_installed = {
           "lua",

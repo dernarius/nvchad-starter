@@ -11,10 +11,10 @@ return {
         "gopls",
         "nixd",
         "pylsp",
-        "ruff",
         "rust_analyzer",
         "texlab",
         "ty",
+        "vtsls",
       }
 
       vim.lsp.config("pylsp", {
