@@ -16,6 +16,8 @@ return {
           python = { "black", "isort" },
 
           go = { "go fmt" },
+
+          nix = { "nixfmt" },
         },
       }
 
